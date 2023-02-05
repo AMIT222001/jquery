@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("a").each(function () {  
+            $(this).click(function()
+            {
+                var title=$(this).attr("title");
+                var source=title+".png";
+                $("img").attr("src",source);
+            })
+        })
+    })
+</script>
+<body>
+    <p style="border:2px solid; width:25%; margin-left:25%; margin-right:25%">
+        <img style="margin-left:25%;margin-right:25%" height=80 width=80/><br>
+        <a href="#" title="image1">Image 1</a>
+        <a href="#" title="image2">Image 2</a>
+        <a href="#" title="image3">Image 3</a>
+        </p>
+</body>
+</html>

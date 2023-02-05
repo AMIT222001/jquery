@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#action").click(function() {
+          var text = "";
+          $("div").not("#demo").each(function() {
+            text += $(this).text() + " ";
+          });
+          $("#demo").text(text).css({
+            "border": "1px solid",
+            "width": "20%",
+            "color": "red"
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div style="border:1px solid; width:20%">This is first div tag </div>
+    <div style="border:1px solid; width:20%">This is second div tag </div>
+    <div style="border:1px solid; width:20%">This is third div tag </div>
+    <div id="demo"></div>
+    <button id="action">Click here to Add One More Div Tag</button>
+  </body>
+</html>

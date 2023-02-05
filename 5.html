@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span,
+      p {
+        border: 2px solid green;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <div style="border: 1px solid; width: 30%">
+      <span>span 1</span>
+      <span>span 2</span>
+    </div>
+    <span>second paragraph</span>
+    <p>
+      <span>third paragraph</span>
+      <a href="page1.html">go to page1</a>
+    </p>
+    <button id="action">Click to Perform Action</button>
+  </body>
+  <script>
+    $(document).ready(function () 
+    {
+      //using click function
+      $("#action").click(function () {
+        $("body>*").each(function () {
+          if ($(this).find("span").length >= 1) {
+            $(this)
+              .find("span")
+              .filter(":last")
+              .text("last span")
+              .css("color", "red");
+          }
+        });
+      });
+    });
+  </script>
+</html>

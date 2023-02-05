@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#action").click(function() {
+          // Find all span tags enclosed within div tags
+          $("div span").each(function() {
+            // Change the text and text color to red
+            $(this).text("Changed Text").css("color", "red");
+          });
+
+          // Find all span tags that are direct child of body and not enclosed within div tags
+          $("body > span:not(:has(div))").each(function() {
+            // Enclose them in div tags and set the border to green
+            $(this).wrap("<div></div>").css("border", "1px solid green");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div><span>first paragraph</span></div>
+    <span>second paragraph</span>
+    <div><span>third paragraph</span></div>
+    <button id="action">Click to Perform Action</button>
+  </body>
+</html>

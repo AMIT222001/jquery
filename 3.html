@@ -1,0 +1,30 @@
+<!-- Create HTML document using given code. Create an empty text-area along with a button. The user can click on the button after writing something into text-area. When the event fires it will add dynamically created div tag into body of document. The text written in text-area should appear into div tag. The user is supposed to ensure that user clicks after writing something into text-area otherwise show the error message. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <textarea id="newText"></textarea>
+    <button id="action">Click to Add Div Tag</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#action").click(function () {
+        let a = $("#newText").val();
+        if (a == "") {
+          alert("add something in textarea");
+        } else {
+          // append method insert specific content as the last child of each element in the jquery collection
+          $("body").prepend('<div id="added"></div>');
+          $("#added").append(a);
+        }
+      });
+    });
+  </script>
+</html>
