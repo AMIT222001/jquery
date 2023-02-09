@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#action").click(function(){
+                $("div").toggleClass("newClass");
+            // $("div").removeClass("oldClass").addClass("newClass");
+            })
+           
+          })
+    </script>
+</head>
+<body>
+    Create HTML document as mentioned below and switch the CSS class applied on DIV tag whenever user clicked on the button.
+<head>
+    <style>
+        .oldClass {background-color: cyan;border: 2px solid green;}
+        .newClass {background-color: yellow;border: 2px solid red;}
+     </style>
+     </head>
+     <body>
+     <div id="myDiv" class="oldClass">This is a demo text to understand<br>
+     How to change CSS class at runtime.
+     </div>
+     <button id="action">Click to Change Class</button>
+     
+</body>
+</html>

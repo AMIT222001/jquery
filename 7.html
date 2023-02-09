@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("img").attr("src","image1.png");
+          $("a").each(function(){
+              $(this).click(function()
+              {
+                  var t=$(this).attr("title");
+                  var s=t+".png";
+                  $("img").attr("src",s);
+              })
+          })
+      })
+    </script>
+  </head>
+  <body>
+    Create HTML document as stated below and provide functionality to change
+    image source based on the clicked hyperlink. Download three different PNG
+    images and rename them as image1.png, image2.png and image3.png. Store
+    images into the same folder.
+
+    <p
+      style="border: 2px solid; width: 25%; margin-left: 25%; margin-right: 25%"
+    >
+      <img
+        style="margin-left: 25%; margin-right: 25%"
+        height="80"
+        width="80"
+      /><br />
+      <a href="#" title="image1">Image 1</a>
+      <a href="#" title="image2">Image 2</a>
+      <a href="#" title="image3">Image 3</a>
+    </p>
+  </body>
+</html>
